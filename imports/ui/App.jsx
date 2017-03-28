@@ -6,22 +6,22 @@ import { Tasks } from '../api/tasks.js';
 
 import Task from './Task.jsx';
 
-// App component represent whole the App
+// App component - represents the whole app
 class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
 
-    // find the text field via react-ref
-    const text = ReactDOM.findDomNode(this.refs.textInput).value.trim();
+    // Find the text field via the React ref
+    const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
 
     Tasks.insert({
       text,
-      createdAt: new Date(), //current time
+      createdAt: new Date(), // current time
     });
 
-    //clear form
-    ReactDOM.findDomNode(this.refs.textInput).value = '';
+    // Clear form
+    ReactDOM.findDOMNode(this.refs.textInput).value = '';
   }
 
   renderTasks() {
@@ -35,13 +35,13 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>Risuto-o-okanau</h1>
-          <form className="new-task" onSubmit={this.handleSubmit.bind(this)}>
-            <input
-              type="text"
-              ref="textInput"
-              placeholder="Type to add a new task"
-            />
-          </form>
+            <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+              <input
+                type="text"
+                ref="textInput"
+                placeholder="Type to add new tasks"
+              />
+            </form>
         </header>
 
         <ul>
