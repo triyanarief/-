@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Tasks } from '../api/tasks.js';
 
 // Task component represent single item
 export default class Task extends Component {
